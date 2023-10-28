@@ -13,6 +13,7 @@ function Courses() {
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [published, setPublished] = useState("");
+    const [image, setImage] = useState("");
     return <div>
         <div style={{
             paddingTop:150,
@@ -25,7 +26,7 @@ function Courses() {
             </Typography>
         </div>
         <div style={{display: "flex",justifyContent:"center"}}>
-            <Card variant={"outlined"} style={{width:500, height:400}}> 
+            <Card variant={"outlined"} style={{width:500, height:500}}> 
                     <TextField 
                     fullWidth={true}
                     onChange={(e) => {
@@ -53,6 +54,14 @@ function Courses() {
                     variant="outlined"/>
                     <br></br><br></br>
 
+                    <TextField 
+                    fullWidth={true}
+                    onChange={(e) => {
+                        setImage(e.target.value);
+                    }}
+                    label="Image link" 
+                    variant="outlined"/>
+                    <br></br><br></br>
 
                     <FormControl>
                     <FormLabel id="demo-radio-buttons-group-label">Published</FormLabel>
@@ -74,7 +83,7 @@ function Courses() {
                     size = {"large"}
                     onClick = {() => {
                         function callback2(data) {
-                            console.log(data);
+                            alert("course added!");
                         }
                         function callback1(res) {
                             res.json().then(callback2);
@@ -85,6 +94,7 @@ function Courses() {
                             title: title,
                             description: description,
                             price: price,
+                            imageLink: image,
                             published: true
                         }),
                         headers: {

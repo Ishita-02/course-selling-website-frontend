@@ -22,7 +22,6 @@ function Signin() {
                     <TextField 
                     fullWidth={true}
                     onChange={(e) => {
-                        console.log(e);
                         setEmail(e.target.value);
                     }}
                     label="Username" 

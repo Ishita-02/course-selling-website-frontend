@@ -12,13 +12,14 @@ function App() {
     width:"100vw", 
     height: "100vh",
     backgroundColor:"black"}}>
-      <Appbar/>
+      
       <Router>
+      <Appbar/>
         <Routes>
           <Route path={"/signup"} element={<Signup/>} />
           <Route path={"/signin" }element={<Signin/>} />
           <Route path={"/createcourses" }element={<Courses/>} />
-          <Route path={"/updatecourse" }element={<Updatecourse/>} />
+          <Route path={"/course/:courseId" }element={<Updatecourse/>} />
           <Route path={"/getcourses" }element={<Getcourse/>} />
         </Routes>
       </Router>
