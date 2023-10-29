@@ -20,8 +20,7 @@ function Appbar() {
         fetch("http://localhost:3000/admin/me", {
             method: "GET",
             headers: {
-                "username": localStorage.getItem("username"),
-                "password": localStorage.getItem("password")
+                "Authorization": "Bearer " + localStorage.getItem("token")
             }
         }).then(callback1)
     }, []);
@@ -42,8 +41,7 @@ function Appbar() {
                 <Button
                     variant={"contained"}
                     onClick = {() => {
-                        localStorage.setItem("username", null);
-                        localStorage.setItem("password", null);
+                        localStorage.setItem("token", null);
                         window.location = "/";
                 }}
                 >Logout</Button>

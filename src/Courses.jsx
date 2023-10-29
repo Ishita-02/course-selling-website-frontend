@@ -83,6 +83,7 @@ function Courses() {
                     size = {"large"}
                     onClick = {() => {
                         function callback2(data) {
+                            localStorage.setItem("token", data.token);
                             alert("course added!");
                         }
                         function callback1(res) {
@@ -99,8 +100,7 @@ function Courses() {
                         }),
                         headers: {
                             "Content-type" : "application/json",
-                            "username": localStorage.getItem("username"),
-                            "password": localStorage.getItem("password")
+                            "Authorization": "Bearer " + localStorage.getItem("token")
                         }
                         }).then(callback1)
                     }}>

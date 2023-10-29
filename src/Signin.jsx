@@ -42,7 +42,8 @@ function Signin() {
                     size = {"large"}
                     onClick = {() => {
                         function callback2(data) {
-                            console.log(data);
+                            localStorage.setItem("token", data.token);
+                            alert("Signup done");
                         }
                         function callback1(res) {
                             res.json().then(callback2);
@@ -52,7 +53,8 @@ function Signin() {
                             headers: {
                                 "username": email,
                                 "password": password,
-                                "Content-type" : "application/json"
+                                "Content-type" : "application/json",
+                                //"Authorization": "Bearer " + localStorage.setItem("token")
                             }
                         }).then(callback1);
                     }}
