@@ -11,9 +11,9 @@ function Signin() {
             paddingTop:150,
             marginBottom: 10,
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
         }}>
-            <Typography variant={"h6"}>
+            <Typography color="black" variant={"h6"}>
                 Welcome Back. Signin below
             </Typography>
         </div>
@@ -43,7 +43,7 @@ function Signin() {
                     onClick = {() => {
                         function callback2(data) {
                             localStorage.setItem("token", data.token);
-                            alert("Signup done");
+                            alert("Signin done");
                         }
                         function callback1(res) {
                             res.json().then(callback2);

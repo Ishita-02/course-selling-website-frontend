@@ -29,7 +29,7 @@ function Getcourses() {
 }
 
 function Course(props) {
-    return <Card style={{
+    return <Card style={{  
         margin: 10,
         width: 300,
         minHeight: 200
